@@ -220,32 +220,32 @@ public class AssertTest {
 //      Account account = new Account("acct namex");
 //      assertEquals("acct name", account.getName());
 //   }
-//
-//   @Test(expected=InsufficientFundsException.class)
-//   public void throwsWhenWithdrawingTooMuch() {
-//      account.withdraw(100);
-//   }
-//
-//   @Test
-//   public void throwsWhenWithdrawingTooMuchTry() {
-//      try {
-//         account.withdraw(100);
-//         fail();
-//      }
-//      catch (InsufficientFundsException expected) {
-//         assertThat(expected.getMessage(), equalTo("balance only 0"));
-//      }
-//   }
-//
-//   @Test
-//   public void readsFromTestFile() throws IOException {
-//      String filename = "test.txt";
-//      BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-//      writer.write("test data");
-//      writer.close();
-//      // ...
-//   }
-//
+
+   @Test(expected=InsufficientFundsException.class)
+   public void throwsWhenWithdrawingTooMuch() {
+      account.withdraw(100);
+   }
+
+   @Test
+   public void throwsWhenWithdrawingTooMuchTry() {
+      try {
+         account.withdraw(100);
+         fail();
+      }
+      catch (InsufficientFundsException expected) {
+         assertThat(expected.getMessage(), equalTo("balance only 0"));
+      }
+   }
+
+   @Test
+   public void readsFromTestFile() throws IOException {
+      String filename = "test.txt";
+      BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+      writer.write("test data");
+      writer.close();
+      // ...
+   }
+
 //   @After
 //   public void deleteForReadsFromTestFile() {
 //      new File("test.txt").delete();
@@ -256,18 +256,18 @@ public class AssertTest {
 //   public void somethingWeCannotHandleRightNow() {
 //      // ...
 //   }
-//
-//   @Rule
-//   public ExpectedException thrown = ExpectedException.none();
-//
-//   @Test
-//   public void exceptionRule() {
-//      thrown.expect(InsufficientFundsException.class);
-//      thrown.expectMessage("balance only 0");
-//
-//      account.withdraw(100);
-//   }
-//
+
+   @Rule
+   public ExpectedException thrown = ExpectedException.none();
+
+   @Test
+   public void exceptionRule() {
+      thrown.expect(InsufficientFundsException.class);
+      thrown.expectMessage("balance only 0");
+
+      account.withdraw(100);
+   }
+
 //   @Test
 //   public void doubles() {
 //      assertEquals(9.7, 10.0 - 0.3, 0.005);
