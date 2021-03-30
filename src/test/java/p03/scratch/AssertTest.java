@@ -251,11 +251,11 @@ public class AssertTest {
 //      new File("test.txt").delete();
 //   }
 //
-//   @Test
-//   @Ignore("don't forget me!")
-//   public void somethingWeCannotHandleRightNow() {
-//      // ...
-//   }
+   @Test
+   @Ignore("don't forget me!")
+   public void somethingWeCannotHandleRightNow() {
+      // ...
+   }
 
    @Rule
    public ExpectedException thrown = ExpectedException.none();
