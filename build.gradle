@@ -13,4 +13,5 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'org.hamcrest:hamcrest-junit:2.0.0.0'
     implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.hibernate:hibernate-entitymanager:6.0.0.Alpha7'
 }
